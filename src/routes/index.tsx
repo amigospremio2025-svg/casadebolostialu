@@ -41,7 +41,7 @@ function Index() {
       <section className="section-shell">
         <div className="section-heading"><span aria-hidden="true">✦</span><p className="eyebrow">Os queridinhos da casa</p><h2>Bolos para adoçar cada história</h2><p>Receitas com textura macia, coberturas generosas e aquele gostinho de casa.</p></div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {cakes.map((cake) => <article className="cake-card" key={cake.name}><CakePhoto src={cake.image} alt={cake.name} /><div className="p-6"><span className="cake-tag">{cake.tag}</span><h3 className="mt-3 font-display text-2xl text-brand-brown">{cake.name}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{cake.description}</p><Link to="/cardapio" className="mt-4 inline-flex items-center gap-2 font-semibold text-primary">Ver no cardápio <ArrowRight className="size-4" /></Link></div></article>)}
+          {cakes.slice(0, 3).map((cake) => <article className="cake-card" key={cake.name}><CakePhoto src={cake.image} alt={cake.name} /><div className="p-6"><span className="cake-tag">{cake.tag}</span><h3 className="mt-3 font-display text-2xl text-brand-brown">{cake.name}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{cake.description}</p><Link to="/cardapio" className="mt-4 inline-flex items-center gap-2 font-semibold text-primary">Ver no cardápio <ArrowRight className="size-4" /></Link></div></article>)}
         </div>
       </section>
 
