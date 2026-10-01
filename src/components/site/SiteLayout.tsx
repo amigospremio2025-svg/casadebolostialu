@@ -17,7 +17,7 @@ const external = [
   { label: "WhatsApp", short: "WhatsApp", href: "https://wa.me/5522992275273", logo: "https://cdn.simpleicons.org/whatsapp" },
 ] as const;
 
-export function SiteLayout({ children }: { children: ReactNode }) {
+export function ContactButtons({ className = "" }: { className?: string }) {
   const [copied, setCopied] = useState(false);
 
   async function copyPix() {
@@ -27,14 +27,29 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   }
 
   return (
+    <div className={className} aria-label="Contatos">
+      {external.map(({ label, short, href, logo }) => (
+        <a key={label} href={href} target="_blank" rel="noreferrer" className="side-tile" aria-label={label}>
+          <img src={logo} alt="" width={26} height={26} /><span>{short}</span>
+        </a>
+      ))}
+      <button type="button" className="side-tile" onClick={copyPix} aria-label="Copiar chave Pix">
+        <img src="https://cdn.simpleicons.org/pix" alt="" width={26} height={26} /><span>{copied ? "Copiado!" : "Pix"}</span>
+      </button>
+    </div>
+  );
+}
+
+export function SiteLayout({ children }: { children: ReactNode }) {
+  return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-header/95 shadow-soft backdrop-blur">
-        <div className="mx-auto flex min-h-20 max-w-7xl flex-wrap items-center gap-4 px-4 py-2 sm:px-6 lg:px-8">
+        <div className="mx-auto flex min-h-20 max-w-7xl flex-col items-center gap-3 px-4 py-3 sm:flex-row sm:gap-6 sm:px-6 lg:px-8">
           <Link to="/" className="brand-script shrink-0 text-2xl leading-5 text-brand-brown" aria-label="Casa de Bolo da Tia Lu — início">
             Casa de Bolo<br />da Tia Lu <span aria-hidden="true">🍓</span>
           </Link>
 
-          <nav className="flex flex-1 flex-row items-center gap-2 overflow-x-auto" aria-label="Navegação principal">
+          <nav className="flex w-full min-w-0 flex-row flex-wrap items-center justify-center gap-2 sm:w-auto sm:flex-1 sm:justify-start" aria-label="Navegação principal">
             {links.map((link) => (
               <Button key={link.to} asChild variant="outline" size="sm" className="shrink-0 rounded-full border-primary/40 font-semibold uppercase tracking-wide">
                 <Link to={link.to} activeOptions={{ exact: link.to === "/" }} activeProps={{ className: "bg-primary text-primary-foreground" }}>
@@ -45,17 +60,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </nav>
         </div>
       </header>
-
-      <aside className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-3" aria-label="Contatos">
-        {external.map(({ label, short, href, logo }) => (
-          <a key={label} href={href} target="_blank" rel="noreferrer" className="side-tile" aria-label={label}>
-            <img src={logo} alt="" width={26} height={26} /><span>{short}</span>
-          </a>
-        ))}
-        <button type="button" className="side-tile" onClick={copyPix} aria-label="Copiar chave Pix">
-          <img src="https://cdn.simpleicons.org/pix" alt="" width={26} height={26} /><span>{copied ? "Copiado!" : "Pix"}</span>
-        </button>
-      </aside>
 
       <main>{children}</main>
 
