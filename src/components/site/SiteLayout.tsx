@@ -46,15 +46,15 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         </div>
       </header>
 
-      <aside className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2" aria-label="Contatos">
+      <aside className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-3" aria-label="Contatos">
         {external.map(({ label, short, href, logo }) => (
-          <a key={label} href={href} target="_blank" rel="noreferrer" className="social-tile" aria-label={label}>
-            <img src={logo} alt="" width={24} height={24} className="size-6" /><span>{short}</span>
+          <a key={label} href={href} target="_blank" rel="noreferrer" className="side-tile" aria-label={label}>
+            <img src={logo} alt="" width={26} height={26} /><span>{short}</span>
           </a>
         ))}
-        <Button type="button" variant="outline" className="social-tile" onClick={copyPix} aria-label="Copiar chave Pix">
-          <img src="https://cdn.simpleicons.org/pix" alt="" width={24} height={24} className="size-6" /><span>{copied ? "Copiado!" : "Pix"}</span>
-        </Button>
+        <button type="button" className="side-tile" onClick={copyPix} aria-label="Copiar chave Pix">
+          <img src="https://cdn.simpleicons.org/pix" alt="" width={26} height={26} /><span>{copied ? "Copiado!" : "Pix"}</span>
+        </button>
       </aside>
 
       <main>{children}</main>
