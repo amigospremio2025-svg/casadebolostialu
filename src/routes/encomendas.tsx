@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CalendarHeart, Check, MessageCircle, Palette } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { PageIntro, SiteLayout } from "@/components/site/SiteLayout";
+import { ContactButtons, PageIntro, SiteLayout } from "@/components/site/SiteLayout";
 
 export const Route = createFileRoute("/encomendas")({
   head: () => ({ meta: [

@@ -242,6 +242,9 @@
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }
 
+.contact-stack { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; margin-top: 1.5rem; }
+.contact-stack .side-tile { width: 4.75rem; }
+
 @utility side-tile {
   display: flex;
   width: 4.75rem;

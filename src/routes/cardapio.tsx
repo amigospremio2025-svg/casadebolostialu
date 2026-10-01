@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { PageIntro, SiteLayout } from "@/components/site/SiteLayout";
+import { ContactButtons, PageIntro, SiteLayout } from "@/components/site/SiteLayout";
 import { cakes } from "@/lib/cakes";
 import { CakePhoto } from "@/components/site/CakePhoto";
 
