@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Copy, Instagram, MapPin, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -12,9 +12,9 @@ const links = [
 ] as const;
 
 const external = [
-  { label: "Google Meu Negócio", short: "Google", href: "https://share.google/TfAoJRCZ7U1uG971q", icon: MapPin },
-  { label: "Instagram", short: "Instagram", href: "https://www.instagram.com/casa_de_bolostialu?stkn=OXpoZ2RpOGViZzZy", icon: Instagram },
-  { label: "WhatsApp", short: "WhatsApp", href: "https://wa.me/5522992275273", icon: MessageCircle },
+  { label: "Google Meu Negócio", short: "Google", href: "https://share.google/TfAoJRCZ7U1uG971q", logo: "https://cdn.simpleicons.org/google" },
+  { label: "Instagram", short: "Instagram", href: "https://www.instagram.com/casa_de_bolostialu?stkn=OXpoZ2RpOGViZzZy", logo: "https://cdn.simpleicons.org/instagram" },
+  { label: "WhatsApp", short: "WhatsApp", href: "https://wa.me/5522992275273", logo: "https://cdn.simpleicons.org/whatsapp" },
 ] as const;
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -47,13 +47,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       </header>
 
       <aside className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2" aria-label="Contatos">
-        {external.map(({ label, short, href, icon: Icon }) => (
+        {external.map(({ label, short, href, logo }) => (
           <a key={label} href={href} target="_blank" rel="noreferrer" className="social-tile" aria-label={label}>
-            <Icon aria-hidden="true" /><span>{short}</span>
+            <img src={logo} alt="" width={24} height={24} className="size-6" /><span>{short}</span>
           </a>
         ))}
         <Button type="button" variant="outline" className="social-tile" onClick={copyPix} aria-label="Copiar chave Pix">
-          <Copy aria-hidden="true" /><span>{copied ? "Copiado!" : "Pix"}</span>
+          <img src="https://cdn.simpleicons.org/pix" alt="" width={24} height={24} className="size-6" /><span>{copied ? "Copiado!" : "Pix"}</span>
         </Button>
       </aside>
 
