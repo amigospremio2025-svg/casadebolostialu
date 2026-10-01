@@ -1,9 +1,6 @@
-import chocolate from "@/assets/bolo-chocolate.jpg";
-import cenoura from "@/assets/bolo-cenoura.jpg";
-import redVelvet from "@/assets/bolo-red-velvet.jpg";
-
-export const cakes = [
-  { name: "Bolo de Chocolate", description: "Massa úmida de chocolate, recheio cremoso e brigadeiro artesanal.", image: chocolate, tag: "Mais pedido" },
-  { name: "Bolo de Cenoura", description: "Receita caseira, fofinha e coberta com uma generosa calda de chocolate.", image: cenoura, tag: "Sabor de infância" },
-  { name: "Red Velvet", description: "Camadas aveludadas, creme suave e morangos frescos para celebrar.", image: redVelvet, tag: "Especial" },
-] as const;
+// Fotos dos bolos serão adicionadas depois (image: null mostra um espaço reservado).
+export const cakes: { name: string; description: string; image: string | null; tag: string }[] = [
+  { name: "Bolo de Chocolate", description: "Massa úmida de chocolate, recheio cremoso e brigadeiro artesanal.", image: null, tag: "Mais pedido" },
+  { name: "Bolo de Cenoura", description: "Receita caseira, fofinha e coberta com uma generosa calda de chocolate.", image: null, tag: "Sabor de infância" },
+  { name: "Red Velvet", description: "Camadas aveludadas, creme suave e morangos frescos para celebrar.", image: null, tag: "Especial" },
+];
