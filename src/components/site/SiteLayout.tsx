@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle } from "lucide-react";
+import { MapPin, MessageCircle } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -63,7 +63,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
           <div><p className="brand-script text-3xl">Casa de Bolo da Tia Lu 🍓</p><p className="mt-3 max-w-sm text-sm text-footer-muted">Bolos artesanais que transformam afeto, tradição e ingredientes escolhidos em momentos inesquecíveis.</p></div>
           <div><p className="font-semibold">Navegue</p><div className="mt-3 flex flex-col gap-2 text-sm text-footer-muted">{links.map((link) => <Link key={link.to} to={link.to} className="hover:text-footer-foreground">{link.label}</Link>)}</div></div>
-          <div><p className="font-semibold">Faça sua encomenda</p><p className="mt-3 text-sm text-footer-muted">Atendimento direto pelo WhatsApp.</p><a className="mt-4 inline-flex items-center gap-2 font-semibold text-brand-gold" href="https://wa.me/5522992275273" target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> (22) 99227-5273</a></div>
+          <div><p className="font-semibold">Faça sua encomenda</p><p className="mt-3 text-sm text-footer-muted">Atendimento direto pelo WhatsApp.</p><a className="mt-4 inline-flex items-center gap-2 font-semibold text-brand-gold" href="https://wa.me/5522992275273" target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> (22) 99227-5273</a><p className="mt-3 flex items-start gap-2 text-sm text-footer-muted"><MapPin className="mt-0.5 size-4 shrink-0" /> Rua Comandante Ituriel, 599 - Base - São Pedro da Aldeia - RJ</p><a className="mt-4 inline-flex items-center gap-2 rounded-full border border-brand-gold px-4 py-2 text-sm font-semibold text-brand-gold transition-colors hover:bg-brand-gold hover:text-footer" href="https://www.google.com/maps/dir//Bolos+da+Tia+Lu,+Rua+Cmte.+Ituriel+-+Jardim+Soledade,+S%C3%A3o+Pedro+da+Aldeia+-+RJ,+28941-348/@-22.8360192,-42.1003264,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x970f92c76299cb:0xbf95689f4f3f045a!2m2!1d-42.09109!2d-22.8229605?entry=ttu&g_ep=EgoyMDI2MDkyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer"><MapPin className="size-4" /> Como chegar</a></div>
         </div>
         <div className="border-t border-footer-line py-4 text-center text-xs text-footer-muted">Feito com carinho, como bolo de família.</div>
       </footer>
