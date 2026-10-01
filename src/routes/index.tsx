@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Heart, MessageCircle, Sparkles } from "lucide-react";
 
-import heroImage from "@/assets/tia-lu-hero.png";
+import heroAsset from "@/assets/casa-de-bolo-tia-lu.jpg.asset.json";
 import { Button } from "@/components/ui/button";
-import { SiteLayout } from "@/components/site/SiteLayout";
+import { ContactButtons, SiteLayout } from "@/components/site/SiteLayout";
 import { cakes } from "@/lib/cakes";
 import { CakePhoto } from "@/components/site/CakePhoto";
 
@@ -23,15 +23,18 @@ function Index() {
   return (
     <SiteLayout>
       <section className="hero-band">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-10 md:grid-cols-[0.82fr_1.18fr] md:py-14 lg:gap-12">
-          <div className="relative z-10 text-center md:text-left">
-            <p className="eyebrow">Receitas feitas à mão</p>
-            <h1 className="mt-3 font-display text-5xl leading-tight font-bold text-brand-brown sm:text-6xl lg:text-7xl">Bolos caseiros com sabor de infância</h1>
-            <p className="mx-auto mt-5 max-w-lg text-lg text-brand-brown/80 md:mx-0">Feitos com amor pela Tia Lu. Cada fatia guarda um pouco de carinho, memória e celebração.</p>
-            <Button asChild variant="confectionery" size="lg" className="mt-7 h-12 px-7 text-base"><Link to="/encomendas">Peça agora <ArrowRight /></Link></Button>
-            <div className="mt-8 flex flex-wrap justify-center gap-5 text-sm font-semibold text-brand-brown/75 md:justify-start"><span className="inline-flex items-center gap-2"><Heart className="size-4 text-primary" /> Feito com amor</span><span className="inline-flex items-center gap-2"><Sparkles className="size-4 text-brand-gold" /> Produção artesanal</span></div>
+        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-12">
+          <div className="relative mx-auto w-full max-w-xl md:max-w-2xl">
+            <div className="hero-image-wrap"><img src={heroAsset.url} width={1254} height={1254} alt="Casa de Bolo da Tia Lu — Confeitaria & Cafeteria" className="h-full w-full object-cover" /></div>
+            <ContactButtons className="mt-5 grid grid-cols-4 gap-2 sm:gap-3 lg:absolute lg:top-1/2 lg:left-full lg:mt-0 lg:ml-6 lg:flex lg:-translate-y-1/2 lg:flex-col" />
           </div>
-          <div className="hero-image-wrap"><img src={heroImage} width={1536} height={1536} alt="Tia Lu e confeiteiro em uma confeitaria vintage, rodeados de bolos e flores" className="h-full w-full object-cover" /></div>
+          <div className="mx-auto mt-8 max-w-2xl text-center">
+            <p className="eyebrow">Receitas feitas à mão</p>
+            <h1 className="mt-3 font-display text-4xl leading-tight font-bold text-brand-brown sm:text-5xl lg:text-6xl">Bolos caseiros com sabor de infância</h1>
+            <p className="mx-auto mt-4 max-w-lg text-base text-brand-brown/80 sm:text-lg">Feitos com amor pela Tia Lu. Cada fatia guarda um pouco de carinho, memória e celebração.</p>
+            <Button asChild variant="confectionery" size="lg" className="mt-6 h-12 px-7 text-base"><Link to="/encomendas">Peça agora <ArrowRight /></Link></Button>
+            <div className="mt-6 flex flex-wrap justify-center gap-5 text-sm font-semibold text-brand-brown/75"><span className="inline-flex items-center gap-2"><Heart className="size-4 text-primary" /> Feito com amor</span><span className="inline-flex items-center gap-2"><Sparkles className="size-4 text-brand-gold" /> Produção artesanal</span></div>
+          </div>
         </div>
       </section>
 
