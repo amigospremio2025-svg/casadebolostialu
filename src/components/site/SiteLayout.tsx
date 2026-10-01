@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Copy, Instagram, MapPin, Menu, MessageCircle, X } from "lucide-react";
+import { Copy, Instagram, MapPin, MessageCircle } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -12,13 +12,12 @@ const links = [
 ] as const;
 
 const external = [
-  { label: "Google Maps", short: "Maps", href: "https://share.google/TfAoJRCZ7U1uG971q", icon: MapPin },
+  { label: "Google Meu Negócio", short: "Google", href: "https://share.google/TfAoJRCZ7U1uG971q", icon: MapPin },
   { label: "Instagram", short: "Instagram", href: "https://www.instagram.com/casa_de_bolostialu?stkn=OXpoZ2RpOGViZzZy", icon: Instagram },
   { label: "WhatsApp", short: "WhatsApp", href: "https://wa.me/5522992275273", icon: MessageCircle },
 ] as const;
 
 export function SiteLayout({ children }: { children: ReactNode }) {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
   async function copyPix() {
@@ -30,51 +29,33 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-header/95 shadow-soft backdrop-blur">
-        <div className="mx-auto flex min-h-20 max-w-7xl items-center gap-5 px-4 py-2 sm:px-6 lg:px-8">
-          <Link to="/" className="brand-script mr-auto shrink-0 text-2xl leading-5 text-brand-brown" aria-label="Casa de Bolo da Tia Lu — início">
+        <div className="mx-auto flex min-h-20 max-w-7xl flex-wrap items-center gap-4 px-4 py-2 sm:px-6 lg:px-8">
+          <Link to="/" className="brand-script shrink-0 text-2xl leading-5 text-brand-brown" aria-label="Casa de Bolo da Tia Lu — início">
             Casa de Bolo<br />da Tia Lu <span aria-hidden="true">🍓</span>
           </Link>
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
+          <nav className="flex flex-1 flex-row items-center gap-2 overflow-x-auto" aria-label="Navegação principal">
             {links.map((link) => (
-              <Link key={link.to} to={link.to} activeOptions={{ exact: link.to === "/" }} className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>
-                {link.label}
-              </Link>
+              <Button key={link.to} asChild variant="outline" size="sm" className="shrink-0 rounded-full border-primary/40 font-semibold uppercase tracking-wide">
+                <Link to={link.to} activeOptions={{ exact: link.to === "/" }} activeProps={{ className: "bg-primary text-primary-foreground" }}>
+                  {link.label}
+                </Link>
+              </Button>
             ))}
           </nav>
-
-          <div className="hidden items-stretch gap-2 xl:flex">
-            {external.map(({ label, short, href, icon: Icon }) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer" className="social-tile" aria-label={label}>
-                <Icon aria-hidden="true" /><span>{short}</span>
-              </a>
-            ))}
-            <Button type="button" variant="outline" className="social-tile" onClick={copyPix} aria-label="Copiar chave Pix">
-              <Copy aria-hidden="true" /><span>{copied ? "Copiado! ✔" : "Pix"}</span>
-            </Button>
-          </div>
-
-          <Button type="button" variant="ghost" size="icon" className="lg:hidden" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}>
-            {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-          </Button>
         </div>
-
-        {menuOpen && (
-          <div className="border-t border-border bg-header px-4 pb-5 lg:hidden">
-            <nav className="flex flex-col py-2" aria-label="Navegação móvel">
-              {links.map((link) => (
-                <Link key={link.to} to={link.to} className="mobile-link" onClick={() => setMenuOpen(false)}>{link.label}</Link>
-              ))}
-            </nav>
-            <div className="grid grid-cols-4 gap-2">
-              {external.map(({ label, href, icon: Icon }) => (
-                <a key={label} href={href} target="_blank" rel="noreferrer" className="social-tile" aria-label={label}><Icon aria-hidden="true" /><span>{label === "Google Maps" ? "Maps" : label}</span></a>
-              ))}
-              <Button type="button" variant="outline" className="social-tile" onClick={copyPix}><Copy aria-hidden="true" /><span>{copied ? "Copiado!" : "Pix"}</span></Button>
-            </div>
-          </div>
-        )}
       </header>
+
+      <aside className="fixed right-3 top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2" aria-label="Contatos">
+        {external.map(({ label, short, href, icon: Icon }) => (
+          <a key={label} href={href} target="_blank" rel="noreferrer" className="social-tile" aria-label={label}>
+            <Icon aria-hidden="true" /><span>{short}</span>
+          </a>
+        ))}
+        <Button type="button" variant="outline" className="social-tile" onClick={copyPix} aria-label="Copiar chave Pix">
+          <Copy aria-hidden="true" /><span>{copied ? "Copiado!" : "Pix"}</span>
+        </Button>
+      </aside>
 
       <main>{children}</main>
 
