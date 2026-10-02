@@ -3,6 +3,8 @@ import { CalendarHeart, Check, MessageCircle, Palette } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ContactButtons, PageIntro, SiteLayout } from "@/components/site/SiteLayout";
+import caseirinhosPromo from "@/assets/caseirinhos-promo.jpg.asset.json";
+import boloNaruto from "@/assets/bolo-naruto.webp.asset.json";
 
 export const Route = createFileRoute("/encomendas")({
   head: () => ({ meta: [
