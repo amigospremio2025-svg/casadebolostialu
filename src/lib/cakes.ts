@@ -9,7 +9,7 @@ export const cakes: { name: string; description: string; image: string | null; t
   { name: "Bolo de Chocolate", description: "Massa úmida e fofinha, com o sabor intenso do chocolate.", image: chocolate.url, tag: "Mais pedido" },
   { name: "Bolo de Goiabada", description: "Massa amanteigada com fios generosos de goiabada cremosa.", image: goiabada.url, tag: "Especial" },
   { name: "Bolo de Banana com Canela", description: "Banana caramelizada e canela por cima, com cheirinho de casa de vó.", image: banana.url, tag: "Sabor de infância" },
-  { name: "Bolo de Laranja", description: "Massa leve e molhadinha, com calda de laranja.", image: laranja.url, tag: "Caseiro" },
+  { name: "Bolo de Laranja", description: "Massa leve e molhadinha, com calda de laranja.", image: milho.url, tag: "Caseiro" },
   { name: "Bolo de Banana com Chocolate", description: "Massa de banana mesclada com chocolate e açúcar com canela.", image: mesclado.url, tag: "Novidade" },
-  { name: "Bolo de Milho", description: "Receita tradicional, cremosa e douradinha.", image: milho.url, tag: "Tradicional" },
+  { name: "Bolo de Milho", description: "Receita tradicional, cremosa e douradinha.", image: laranja.url, tag: "Tradicional" },
 ];
