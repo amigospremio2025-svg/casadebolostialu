@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ContactButtons, PageIntro, SiteLayout } from "@/components/site/SiteLayout";
 import caseirinhosPromo from "@/assets/caseirinhos-promo.jpg.asset.json";
 import boloNaruto from "@/assets/bolo-naruto.webp.asset.json";
+import videoCaseiros from "@/assets/video-caseiros.mp4.asset.json";
+import videoCarinho from "@/assets/video-feito-com-carinho.mp4.asset.json";
+import videoLoja from "@/assets/video-loja.mp4.asset.json";
 
 export const Route = createFileRoute("/encomendas")({
   head: () => ({ meta: [
@@ -27,6 +30,12 @@ const encomendaGallery = [
   { src: caseirinhosPromo.url, alt: "Bolos caseiros fresquinhos da Casa de Bolo da Tia Lu", caption: "Caseirinhos fresquinhos saindo agora" },
 ];
 
+const encomendaVideos = [
+  { src: videoCaseiros.url, caption: "Os melhores bolos caseiros, aniversário e casamento" },
+  { src: videoCarinho.url, caption: "Feito com carinho e persistência" },
+  { src: videoLoja.url, caption: "Visite nossa loja — Rua Comandante Ituriel, 599" },
+];
+
 function Encomendas() {
-  return <SiteLayout><PageIntro eyebrow="Feito especialmente para você" title="Encomendas com carinho">Do primeiro “olá” ao último detalhe, a Tia Lu acompanha seu pedido de perto.</PageIntro><ContactButtons className="contact-stack" /><section className="section-shell pt-2"><div className="grid gap-6 md:grid-cols-3">{steps.map(({ icon: Icon, n, title, text }) => <article className="step-card" key={n}><span className="step-number">{n}</span><Icon className="mt-7 size-8 text-primary" /><h2 className="mt-4 font-display text-2xl text-brand-brown">{title}</h2><p className="mt-2 leading-7 text-muted-foreground">{text}</p></article>)}</div><div className="mt-10 grid gap-6 sm:grid-cols-2">{encomendaGallery.map((item) => <figure className="cake-card" key={item.src}><img src={item.src} alt={item.alt} className="w-full object-cover" loading="lazy" /><figcaption className="p-5 text-center text-sm font-medium text-muted-foreground">{item.caption}</figcaption></figure>)}</div><div className="order-panel"><div><p className="eyebrow">Vamos conversar?</p><h2 className="mt-2 font-display text-4xl text-brand-brown">Seu próximo bolo começa aqui.</h2><ul className="mt-5 space-y-3 text-sm text-muted-foreground"><li><Check /> Atendimento personalizado</li><li><Check /> Sabores artesanais</li><li><Check /> Detalhes combinados diretamente com você</li></ul></div><Button asChild variant="confectionery" size="lg" className="h-13 px-7"><a href="https://wa.me/5522992275273" target="_blank" rel="noreferrer"><MessageCircle /> Fazer pedido pelo WhatsApp</a></Button></div></section></SiteLayout>;
+  return <SiteLayout><PageIntro eyebrow="Feito especialmente para você" title="Encomendas com carinho">Do primeiro “olá” ao último detalhe, a Tia Lu acompanha seu pedido de perto.</PageIntro><ContactButtons className="contact-stack" /><section className="section-shell pt-2"><div className="grid gap-6 md:grid-cols-3">{steps.map(({ icon: Icon, n, title, text }) => <article className="step-card" key={n}><span className="step-number">{n}</span><Icon className="mt-7 size-8 text-primary" /><h2 className="mt-4 font-display text-2xl text-brand-brown">{title}</h2><p className="mt-2 leading-7 text-muted-foreground">{text}</p></article>)}</div><div className="mt-10 grid gap-6 sm:grid-cols-2">{encomendaGallery.map((item) => <figure className="cake-card" key={item.src}><img src={item.src} alt={item.alt} className="w-full object-cover" loading="lazy" /><figcaption className="p-5 text-center text-sm font-medium text-muted-foreground">{item.caption}</figcaption></figure>)}</div><div className="mt-10 grid gap-6 md:grid-cols-3">{encomendaVideos.map((video) => <figure className="cake-card" key={video.src}><video src={video.src} controls playsInline preload="metadata" className="w-full" /><figcaption className="p-5 text-center text-sm font-medium text-muted-foreground">{video.caption}</figcaption></figure>)}</div><div className="order-panel"><div><p className="eyebrow">Vamos conversar?</p><h2 className="mt-2 font-display text-4xl text-brand-brown">Seu próximo bolo começa aqui.</h2><ul className="mt-5 space-y-3 text-sm text-muted-foreground"><li><Check /> Atendimento personalizado</li><li><Check /> Sabores artesanais</li><li><Check /> Detalhes combinados diretamente com você</li></ul></div><Button asChild variant="confectionery" size="lg" className="h-13 px-7"><a href="https://wa.me/5522992275273" target="_blank" rel="noreferrer"><MessageCircle /> Fazer pedido pelo WhatsApp</a></Button></div></section></SiteLayout>;
 }
