@@ -276,6 +276,7 @@
 @media (max-width: 1023px) {
   .side-tile { width: 100%; height: 3.25rem; gap: 0.2rem; font-size: 0.55rem; }
   .side-tile img { width: 1.3rem; height: 1.3rem; }
+  .contact-stack .side-tile { width: auto; flex: 1 1 4.75rem; }
   .side-tile:hover { transform: translateY(-3px); }
   .cta-band h2 { font-size: 1.9rem; }
 }
