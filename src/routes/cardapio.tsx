@@ -8,9 +8,9 @@ import { CakePhoto } from "@/components/site/CakePhoto";
 
 export const Route = createFileRoute("/cardapio")({
   head: () => ({ meta: [
-    { title: "Cardápio | Casa de Bolo da Tia Lu" },
-    { name: "description", content: "Conheça os bolos artesanais da Casa de Bolo da Tia Lu." },
-    { property: "og:title", content: "Cardápio | Casa de Bolo da Tia Lu" },
+    { title: "Cardápio | Casa de Bolos da Tia Lu" },
+    { name: "description", content: "Conheça os bolos artesanais da Casa de Bolos da Tia Lu." },
+    { property: "og:title", content: "Cardápio | Casa de Bolos da Tia Lu" },
     { property: "og:description", content: "Bolos artesanais para celebrar e compartilhar." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ] }), component: Cardapio,
