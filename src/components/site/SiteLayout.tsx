@@ -46,7 +46,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-header/95 shadow-soft backdrop-blur">
         <div className="mx-auto flex min-h-20 max-w-7xl flex-col items-center gap-3 px-4 py-3 sm:flex-row sm:gap-6 sm:px-6 lg:px-8">
-          <Link to="/" className="brand-script shrink-0 text-2xl leading-6 text-brand-brown sm:text-3xl sm:leading-9" aria-label="Casa de Bolos da Tia Lu — início">
+          <Link to="/" className="brand-script shrink-0 text-3xl leading-9 text-brand-brown sm:text-4xl sm:leading-11" aria-label="Casa de Bolos da Tia Lu — início">
             Casa de Bolos<br />da Tia Lu <span aria-hidden="true">🍓</span>
           </Link>
 
