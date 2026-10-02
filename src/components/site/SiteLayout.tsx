@@ -15,6 +15,7 @@ const external = [
   { label: "Google Meu Negócio", short: "Google", href: "https://share.google/TfAoJRCZ7U1uG971q", logo: "https://cdn.simpleicons.org/google" },
   { label: "Instagram", short: "Instagram", href: "https://www.instagram.com/casa_de_bolostialu?stkn=OXpoZ2RpOGViZzZy", logo: "https://cdn.simpleicons.org/instagram" },
   { label: "WhatsApp", short: "WhatsApp", href: "https://wa.me/5522992275273", logo: "https://cdn.simpleicons.org/whatsapp" },
+  { label: "TikTok", short: "TikTok", href: "https://www.tiktok.com/@casadebolos.datialu?_r=1&_t=ZS-9ACpHq1JLGR", logo: "https://cdn.simpleicons.org/tiktok" },
 ] as const;
 
 export function ContactButtons({ className = "" }: { className?: string }) {
