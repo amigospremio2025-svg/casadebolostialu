@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ContactButtons, PageIntro, SiteLayout } from "@/components/site/SiteLayout";
 import caseirinhosPromo from "@/assets/caseirinhos-promo.jpg.asset.json";
 import boloNaruto from "@/assets/bolo-naruto.webp.asset.json";
+import videoCaseiros from "@/assets/video-caseiros.mp4.asset.json";
+import videoCarinho from "@/assets/video-feito-com-carinho.mp4.asset.json";
+import videoLoja from "@/assets/video-loja.mp4.asset.json";
 
 export const Route = createFileRoute("/encomendas")({
   head: () => ({ meta: [
@@ -25,6 +28,12 @@ const steps = [
 const encomendaGallery = [
   { src: boloNaruto.url, alt: "Bolo personalizado temático de aniversário", caption: "Bolos personalizados para festas e aniversários" },
   { src: caseirinhosPromo.url, alt: "Bolos caseiros fresquinhos da Casa de Bolo da Tia Lu", caption: "Caseirinhos fresquinhos saindo agora" },
+];
+
+const encomendaVideos = [
+  { src: videoCaseiros.url, caption: "Os melhores bolos caseiros, aniversário e casamento" },
+  { src: videoCarinho.url, caption: "Feito com carinho e persistência" },
+  { src: videoLoja.url, caption: "Visite nossa loja — Rua Comandante Ituriel, 599" },
 ];
 
 function Encomendas() {
