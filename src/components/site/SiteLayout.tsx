@@ -51,7 +51,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
           <nav className="flex w-full min-w-0 flex-row flex-wrap items-center justify-center gap-2 sm:w-auto sm:flex-1 sm:justify-start" aria-label="Navegação principal">
             {links.map((link) => (
-              <Button key={link.to} asChild variant="outline" size="sm" className="shrink-0 rounded-full border-primary/40 font-semibold uppercase tracking-wide">
+              <Button key={link.to} asChild variant="outline" size="sm" className="h-7 shrink-0 rounded-full border-primary/40 px-2.5 text-[0.68rem] font-semibold uppercase tracking-wide sm:px-3 sm:text-[0.72rem]">
                 <Link to={link.to} activeOptions={{ exact: link.to === "/" }} activeProps={{ className: "bg-primary text-primary-foreground" }}>
                   {link.label}
                 </Link>
