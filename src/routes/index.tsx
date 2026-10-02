@@ -27,7 +27,7 @@ function Index() {
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-12">
           <div className="relative mx-auto w-full max-w-xl md:max-w-2xl">
             <div className="hero-image-wrap"><img src={heroAsset.url} width={1254} height={1254} alt="Casa de Bolo da Tia Lu — Confeitaria & Cafeteria" className="h-full w-full object-cover" /></div>
-            <ContactButtons className="mt-5 grid grid-cols-5 gap-2 sm:gap-3 lg:absolute lg:top-1/2 lg:left-full lg:mt-0 lg:ml-6 lg:flex lg:-translate-y-1/2 lg:flex-col" />
+            <ContactButtons className="mt-5 grid grid-cols-5 gap-1.5 sm:gap-3 lg:absolute lg:top-1/2 lg:left-full lg:mt-0 lg:ml-6 lg:flex lg:-translate-y-1/2 lg:flex-col" />
           </div>
           <div className="mx-auto mt-8 max-w-2xl text-center">
             <p className="eyebrow">Receitas feitas à mão</p>
