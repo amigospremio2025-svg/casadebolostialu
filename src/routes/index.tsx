@@ -10,9 +10,9 @@ import { CakePhoto } from "@/components/site/CakePhoto";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "Casa de Bolo da Tia Lu | Bolos caseiros e artesanais" },
-    { name: "description", content: "Bolos caseiros feitos com carinho, tradição e sabor de infância. Conheça a Casa de Bolo da Tia Lu." },
-    { property: "og:title", content: "Casa de Bolo da Tia Lu" },
+    { title: "Casa de Bolos da Tia Lu | Bolos caseiros e artesanais" },
+    { name: "description", content: "Bolos caseiros feitos com carinho, tradição e sabor de infância. Conheça a Casa de Bolos da Tia Lu." },
+    { property: "og:title", content: "Casa de Bolos da Tia Lu" },
     { property: "og:description", content: "Bolos artesanais com sabor de infância." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -26,7 +26,7 @@ function Index() {
       <section className="hero-band">
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 md:py-12">
           <div className="relative mx-auto w-full max-w-xl md:max-w-2xl">
-            <div className="hero-image-wrap"><img src={heroAsset.url} width={1254} height={1254} alt="Casa de Bolo da Tia Lu — Confeitaria & Cafeteria" className="h-full w-full object-cover" /></div>
+            <div className="hero-image-wrap"><img src={heroAsset.url} width={1254} height={1254} alt="Casa de Bolos da Tia Lu — Confeitaria & Cafeteria" className="h-full w-full object-cover" /></div>
             <ContactButtons className="mt-5 grid grid-cols-5 gap-1.5 sm:gap-3 lg:absolute lg:top-1/2 lg:left-full lg:mt-0 lg:ml-6 lg:flex lg:-translate-y-1/2 lg:flex-col" />
           </div>
           <div className="mx-auto mt-8 max-w-2xl text-center">

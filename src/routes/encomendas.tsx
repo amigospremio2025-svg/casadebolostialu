@@ -11,9 +11,9 @@ import videoLoja from "@/assets/video-loja.mp4.asset.json";
 
 export const Route = createFileRoute("/encomendas")({
   head: () => ({ meta: [
-    { title: "Encomendas | Casa de Bolo da Tia Lu" },
+    { title: "Encomendas | Casa de Bolos da Tia Lu" },
     { name: "description", content: "Encomende seu bolo artesanal diretamente com a Tia Lu pelo WhatsApp." },
-    { property: "og:title", content: "Encomendas | Casa de Bolo da Tia Lu" },
+    { property: "og:title", content: "Encomendas | Casa de Bolos da Tia Lu" },
     { property: "og:description", content: "Seu bolo especial, feito com carinho pela Tia Lu." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ] }), component: Encomendas,
@@ -27,7 +27,7 @@ const steps = [
 
 const encomendaGallery = [
   { src: boloNaruto.url, alt: "Bolo personalizado temático de aniversário", caption: "Bolos personalizados para festas e aniversários" },
-  { src: caseirinhosPromo.url, alt: "Bolos caseiros fresquinhos da Casa de Bolo da Tia Lu", caption: "Caseirinhos fresquinhos saindo agora" },
+  { src: caseirinhosPromo.url, alt: "Bolos caseiros fresquinhos da Casa de Bolos da Tia Lu", caption: "Caseirinhos fresquinhos saindo agora" },
 ];
 
 const encomendaVideos = [

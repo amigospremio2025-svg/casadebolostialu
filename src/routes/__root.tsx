@@ -78,10 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Casa de Bolo da Tia Lu" },
+      { title: "Casa de Bolos da Tia Lu" },
       { name: "description", content: "Bolos artesanais com carinho e sabor de infância." },
-      { name: "author", content: "Casa de Bolo da Tia Lu" },
-      { property: "og:title", content: "Casa de Bolo da Tia Lu" },
+      { name: "author", content: "Casa de Bolos da Tia Lu" },
+      { property: "og:title", content: "Casa de Bolos da Tia Lu" },
       { property: "og:description", content: "Bolos artesanais com carinho e sabor de infância." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
